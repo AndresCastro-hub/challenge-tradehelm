@@ -11,7 +11,7 @@ const Home: React.FC = () => {
         
     const handleSubmit = ( event :React.FormEvent<HTMLFormElement>) =>{
 
-        const value = event.target.product.value;
+        const value = event.target[0].value;
         
         event.preventDefault();
         
@@ -28,7 +28,7 @@ const Home: React.FC = () => {
         
         setProductos([...productos, newProductos])
         
-        event.target.product.value = ''
+        event.target[0].value = ''
 
         toogleModal(false)
         
