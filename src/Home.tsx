@@ -11,23 +11,25 @@ const Home: React.FC = () => {
         
     const handleSubmit = ( event :React.FormEvent<HTMLFormElement>) =>{
 
+       
+
         const value = event.target[0].value;
-        
+ 
         event.preventDefault();
         
+        if(value.length < 1){
+            return ;
+        }
         const newProductos =   {
             id : +new Date,
             value,
             completed: false
            
         }
-        
-        if(value.length < 1){
-            return;
-        }
+
         
         setProductos([...productos, newProductos])
-        
+
         event.target[0].value = ''
 
         toogleModal(false)
@@ -66,7 +68,7 @@ const Home: React.FC = () => {
       
         <main className="container">
             <h1 className='title'>Supermarket list</h1>
-            <h3 className='desc'>{productos.length || 0} item(s)</h3>
+            <h3 className='desc'>{productos.length } item(s)</h3>
         
             {
                 modalVisible && (
