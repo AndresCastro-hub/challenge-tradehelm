@@ -66,10 +66,12 @@ const Home: React.FC = () => {
     },[])
  
     return (
+
+        // {productos.length || 0 }
       
         <main className="container">
             <h1 className='title'>Supermarket list</h1>
-            <h3 className='desc'>{productos.length || 0 } item(s)</h3>
+            <h3 className='desc'>   item(s)</h3>
         
             {
                 modalVisible && (
