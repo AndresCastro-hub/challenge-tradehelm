@@ -17,7 +17,10 @@ const Home: React.FC = () => {
  
         event.preventDefault();
         
-       
+        if(value !=null && value.length < 1){
+            return ;
+        }
+        
         const newProductos =   {
             id : +new Date,
             value,
