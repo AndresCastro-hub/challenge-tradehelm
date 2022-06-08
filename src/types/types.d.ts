@@ -1,5 +1,5 @@
 export interface Prod {
-    id: number
+    id: number 
     value: string
     completed: boolean
 }
