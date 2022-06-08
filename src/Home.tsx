@@ -16,8 +16,6 @@ const Home: React.FC = () => {
     const [modalVisible, toogleModal] = useState(false);
     const [status, setStatus] = useState<Status>(Status.Init);
 
-    
-
     const handleSubmit = ( event :React.FormEvent<HTMLFormElement>) =>{
 
         const value = event.target[0].value;
@@ -66,8 +64,8 @@ const Home: React.FC = () => {
             const datos = ( JSON.parse(localStorage.getItem('productos')!))
             if(datos){
                 setProductos(datos)
-                setStatus(Status.Success)
             }
+            setStatus(Status.Success)
         }, 800);
     },[])
 
